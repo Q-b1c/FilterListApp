@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
     fun checkEven(l: MutableList<Int>): MutableList<Int> {
         var Even: MutableList<Int> = mutableListOf()
         for (i in 0..l.size - 1) {
-            if (l[i] % 2 == 0) {
+            if ((l[i] % 2 == 0)&&(l[i]!=0)) {
                 Even.add(l[i])
             }
         }
