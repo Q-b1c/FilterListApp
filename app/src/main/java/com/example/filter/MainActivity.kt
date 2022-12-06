@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-        val radioOdd = findViewById<RadioButton>(R.id.radioButton2)
-        val radioEven = findViewById<RadioButton>(R.id.radioButton3)
+        val radioEven = findViewById<RadioButton>(R.id.radioEven)
+        val radioOdd = findViewById<RadioButton>(R.id.radioOdd)
         val Button = findViewById<Button>(R.id.button)
         Button.setOnClickListener {
             if (!editText.text.isEmpty()) {
@@ -36,12 +35,12 @@ class MainActivity : AppCompatActivity() {
                 adapter.insertList(listofNumber)
                 adapter.notifyDataSetChanged()
             }
-            if (radioEven.isChecked) {
-                adapter.insertList(listofEvenNumber)
+            if (radioOdd.isChecked) {
+                adapter.insertList(listofOddNumber)
                 adapter.notifyDataSetChanged()
             }
             if (radioEven.isChecked) {
-                adapter.insertList(listofOddNumber)
+                adapter.insertList(listofEvenNumber)
                 adapter.notifyDataSetChanged()
             }
 
@@ -53,11 +52,11 @@ class MainActivity : AppCompatActivity() {
                     adapter.insertList(listofNumber)
                     adapter.notifyDataSetChanged()
                 }
-                R.id.radioButton2 -> {
+                R.id.radioEven -> {
                     adapter.insertList(listofEvenNumber)
                     adapter.notifyDataSetChanged()
                 }
-                R.id.radioButton3 -> {
+                R.id.radioOdd -> {
                     adapter.insertList(listofOddNumber)
                     adapter.notifyDataSetChanged()
                 }
